@@ -1,8 +1,6 @@
 # The Zen of Python by Tim Peters
 import this
 
-help(enumerate)
-
 # Enumerate can help start with different index by using 'start'
 arr1 = [4, 7, 9, 3, 4]
 for idx, i in enumerate(arr1, start=5):
@@ -23,3 +21,27 @@ arr2 = ['dick', 'harry', 'norman']
 # Use map to apply lambda function to arr2
 # Use * to unpack map object in a list
 [*map(lambda x:str.upper(x), arr2)]
+
+# For timing the code
+%timeit ls = [*range(1, 1000000)]
+# Flags -r -n -o
+%timeit -r5 -n20 ls = [*range(1, 1000000)]
+
+# Use double % for running more than one line of code.
+%%timeit
+ls1 = []
+for i in range(1, 1000000):
+    ls1.append(i)
+
+%timeit [s*3 for s in arr1]
+%timeit [*map(lambda s : s*3, arr1)]
+
+# Profiling
+# Time
+%load_ext line_profiler
+%lprun -f funcname funcname(parameters)
+
+# Memory
+from hero_funcs import convert_units
+%load_ext memory_profiler
+%mprun -f convert_units convert_units(heroes, hts, wts)
