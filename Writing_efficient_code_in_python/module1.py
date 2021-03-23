@@ -14,7 +14,7 @@ list(map(lambda x: x+10, arr1))
 # * can be used with range to unpack an object within a list
 [*range(0, 11)]
 [1, 2, *range(3, 15), 15]
-arr2 = ['dick', 'harry', 'norman']
+arr2 = ['dick', 'harry', 'norman', 'bill', 'jack']
 [*enumerate(arr2, start=1)]
 
 # Capitalize and print arr2
@@ -45,3 +45,12 @@ for i in range(1, 1000000):
 from hero_funcs import convert_units
 %load_ext memory_profiler
 %mprun -f convert_units convert_units(heroes, hts, wts)
+
+from collections import Counter
+arr3 = ['Grass', 'Dark', 'Fire', 'Water', 'Legendary', 'Grass', 'Grass', 'Grass', 'Grass', 'Grass', 'Grass'
+        , 'Dark', 'Dark', 'Dark', 'Dark', 'Dark', 'Legendary', 'Legendary', 'Fire', 'Water'
+        , 'Fire', 'Water', 'Fire', 'Water', 'Fire', 'Water']
+Counter(arr3)
+
+from itertools import combinations
+[*combinations(set(arr3), 2)]
