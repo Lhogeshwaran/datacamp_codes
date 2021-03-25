@@ -3,6 +3,9 @@
 # %%timeit for timing multiple lines of code
 # memory and efficiency profiling
 # itertools
+# Avoiding loops efficiently by using map and zip
+# Pandas
+# iterrows(), itertuples(), apply()
 
 
 # The Zen of Python by Tim Peters
