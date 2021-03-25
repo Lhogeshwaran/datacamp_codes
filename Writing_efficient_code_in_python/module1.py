@@ -1,3 +1,10 @@
+##
+# zip, map, using * for extraction into a list, %timeit for single line
+# %%timeit for timing multiple lines of code
+# memory and efficiency profiling
+# itertools
+
+
 # The Zen of Python by Tim Peters
 import this
 
@@ -54,3 +61,17 @@ Counter(arr3)
 
 from itertools import combinations
 [*combinations(set(arr3), 2)]
+
+
+# Set theory
+# Intersection, difference, symmetric_difference, union
+
+arr4 = [2, 4, 7, 4, 8, 1, 8, 3, 10]
+
+%%timeit
+tmp = 0
+for i in arr4:
+    tmp += i
+print(tmp)
+
+%timeit sum(arr4)
