@@ -65,7 +65,6 @@ Counter(arr3)
 from itertools import combinations
 [*combinations(set(arr3), 2)]
 
-
 # Set theory
 # Intersection, difference, symmetric_difference, union
 
