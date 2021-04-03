@@ -77,3 +77,22 @@ for i in arr4:
 print(tmp)
 
 %timeit sum(arr4)
+
+# Function within function
+
+def capitalize_int(func):
+
+    def inner(s):
+        return func(s.capitalize())
+    
+    return inner
+
+def reverse_string(s):
+
+    return s[::-1]
+
+s = 'loki'
+reverse_string = capitalize_int(reverse_string)
+reverse_string(s)
+
+s.capitalize()
